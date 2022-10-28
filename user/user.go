@@ -45,6 +45,7 @@ func main() {
 			data, _ := json.Marshal(response)
 			resp.Write(data)
 		} else {
+			log.Println(err)
 			resp.WriteHeader(http.StatusInternalServerError)
 		}
 	})

@@ -6,7 +6,9 @@ import (
 	"github.com/uli-rahmani/grpc/proto"
 )
 
-type Math struct{}
+type Math struct {
+	proto.UnimplementedMathServer
+}
 
 func (ucm Math) Add(ctx context.Context, request *proto.MathRequest) (*proto.MathResponse, error) {
 	a, b := request.GetFirstParam(), request.GetSecondParam()

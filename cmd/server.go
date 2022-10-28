@@ -16,8 +16,7 @@ func main() {
 	}
 
 	s := grpc.NewServer()
-	ucm := new(usecase.Math)
-	proto.RegisterMathServer(s, ucm)
+	proto.RegisterMathServer(s, &usecase.Math{})
 	reflection.Register(s)
 
 	if e := s.Serve(listener); e != nil {

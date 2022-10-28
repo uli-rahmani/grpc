@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+option go_package = "/proto";
+
 package proto;
 
 // MathRequest will be converted into Go variable that we will used in Go apps.
